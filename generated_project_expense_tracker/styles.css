@@ -1,0 +1,161 @@
+/* Base reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* App container */
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* allow horizontal scroll on tiny screens */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Form layout */
+#expense-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#expense-name,
+#expense-amount {
+    flex: 1 1 150px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#expense-amount {
+    max-width: 120px;
+}
+
+#add-expense-btn {
+    padding: 9px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+#add-expense-btn:hover {
+    background-color: #0056b3;
+}
+
+#add-expense-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Table styling */
+#expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#expenses-table th,
+#expenses-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#expenses-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#expenses-table tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* Total display */
+.total {
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* Reset button */
+#reset-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#reset-btn:hover {
+    background-color: #c82333;
+}
+
+#reset-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    #expense-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #expense-name,
+    #expense-amount,
+    #add-expense-btn {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+    #expense-amount {
+        max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .app {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    #expenses-table th,
+    #expenses-table td {
+        padding: 8px;
+    }
+}
